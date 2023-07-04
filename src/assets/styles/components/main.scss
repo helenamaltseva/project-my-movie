@@ -1,0 +1,30 @@
+.main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+   
+  margin: 0 auto;
+
+  // background-image: url("../../images/bg.jpg");
+  background-color: #d1caee;
+}
+
+.main-box {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  margin: 0 auto;
+}
+
+.error {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+
+
+
+
