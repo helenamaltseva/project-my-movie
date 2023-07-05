@@ -13,7 +13,7 @@ import logo from "../../assets/images/logo.jpg"
 let API_key="&api_key=056bd4b1062af5614a130c8953a04a6d";
 let base_url="https://api.themoviedb.org/3";
 let url=base_url+"/discover/movie?sort_by=popularity.desc"+API_key;
-let genres=["fantasy", "crime", "animation", "drama", "comedy", "horror", "history"];
+let genres=["fantasy", "crime", "animation", "drama", "comedy"];
 
 
 const Main = () => {
@@ -50,14 +50,7 @@ const Main = () => {
     {
       url=base_url+"/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=35"+API_key;
     }
-    if(genres==="horror")
-    {
-      url=base_url+"/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=27"+API_key;
-    }
-    if(genres==="history")
-    {
-      url=base_url+"/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=36"+API_key;
-    }
+    
     setUrl(url);
   }
     
