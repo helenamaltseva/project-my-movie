@@ -5,6 +5,7 @@ import { BsSearch } from "react-icons/bs"
 //assets
 import "../../assets/styles/components/main.scss"
 import "../../assets/styles/components/header.scss"
+import "../../assets/styles/components/footer.scss"
 import "../../assets/styles/container/container.scss"
 import logo from "../../assets/images/logo.jpg"
 
@@ -59,18 +60,9 @@ const Main = () => {
     }
     setUrl(url);
   }
-
-  // const searchMovie=(evt)=>{
-  //   if(evt.key==="Enter")
-  //   {
-  //     url=base_url+"/search/movie?api_key=056bd4b1062af5614a130c8953a04a6d&query="+search;
-  //     setUrl(url);
-  //     setSearch(" ");
-  //   }
-  // } 
-  
+    
   const searchMovie = (evt) => {
-    evt.preventDefault(); // Остановить отправку формы
+    evt.preventDefault(); 
   
     url = base_url + "/search/movie?api_key=056bd4b1062af5614a130c8953a04a6d&query=" + search;
     setUrl(url);
@@ -85,20 +77,6 @@ const Main = () => {
             <img className="header-logo__img" src={logo} alt="" />
           </div>
           <nav className="header-navigation">
-            {/* <ul className="header-navigation__list">
-
-              {
-                genres.map((value,pos)=>{
-                
-                  return(
-                    <li className="header-navigation__list-item"><a href="#" key={pos} name={value} onClick={(e)=>{getData(e.target.name)}}>{value}</a></li>
-                  )
-                  
-                })
-              }
-
-            </ul> */}
-
             <ul className="header-navigation__list">
               {genres.map((value, pos) => (
                 <li className="header-navigation__list-item" key={pos}>
@@ -108,20 +86,8 @@ const Main = () => {
                 </li>
               ))}
             </ul>
-
           </nav>
         </div>
-        {/* <form className="header-form">
-          <div className="header-form__search">
-            <input className="header-form__search-input" type="text" placeholder="Enter search" 
-              onChange={(e) => {setSearch(e.target.value)}} 
-              value={search} onKeyPress={searchMovie}>
-            </input>
-            <button className="header-form__search-btn" type="submit" >
-              <i className="header-form__search-btn__icon"><BsSearch/></i>
-            </button>
-          </div>
-        </form> */}
         <form className="header-form" onSubmit={searchMovie}>
           <div className="header-form__search">
             <input
@@ -141,10 +107,8 @@ const Main = () => {
             </button>
           </div>
         </form>
-
       </div>
       <div className="main">
-
         {
           (data.length===0)?<p className="error">ERROR</p>: data.map((res,pos)=>{
 
@@ -154,9 +118,11 @@ const Main = () => {
             )
           })
         }
-          
       </div>
-                  
+      <div className="footer">
+        <p className="footer-text">Cinema is life, from which everything boring is cut out.</p>
+        <p className="footer-author">ALFRED HITCHCOCK</p>
+      </div>
     </>
   )
 }
